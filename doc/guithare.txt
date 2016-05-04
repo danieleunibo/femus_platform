@@ -1,0 +1,24 @@
+Install GUITHARE with the following steps:
+ create the directory path/software/cathare/guithare/
+ run the command :
+tar -xzvf GUITHARE V1.8.5 SUSE9 64bit 20130703.tar.gz
+to untar the tar file. Remark: the tar file expand into the directory.
+ go into the directory
+path/software/cathare/guithare/.
+In the following directories appear the following directories and files:
+– prerequisites: cas-6.3.1,hdf5-1.6.9, vtk-5.8.0,qwt-5.2.1,graphviz-2.20.2,qt-
+4.7.0,
+– modules: GUI, CATHAREGUI, KERNEL,
+– scripts: env.csh,run.csh, readme.txt,
+– directories: Solvers,WORK
+ go into the
+path/software/cathare/guithare/Solvers
+directory and create the links from
+v25 1, v25 2, v25 3
+to the cathare program directory
+path/cathare/v25 2/mod5.1/
+ run the command dos2unix on the scripts env.csh and run.csh: dos2unix
+env.csh and dos2unix run.csh. The scripts have the correct symbols.
+ run the command:
+./run.csh,
+see next subsection.

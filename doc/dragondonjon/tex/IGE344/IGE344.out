@@ -1,0 +1,123 @@
+\BOOKMARK [1][-]{section*.1}{Contents }{}% 1
+\BOOKMARK [1][-]{section*.2}{List of Tables }{}% 2
+\BOOKMARK [1][-]{section*.3}{List of Figures }{}% 3
+\BOOKMARK [1][-]{section.0.1}{INTRODUCTION }{}% 4
+\BOOKMARK [1][-]{section.0.2}{GENERAL SPECIFICATION OF DONJON }{}% 5
+\BOOKMARK [2][-]{subsection.0.2.1}{Modules}{section.0.2}% 6
+\BOOKMARK [2][-]{subsection.0.2.2}{Data structures}{section.0.2}% 7
+\BOOKMARK [2][-]{subsection.0.2.3}{Syntactic rules for input specification}{section.0.2}% 8
+\BOOKMARK [2][-]{subsection.0.2.4}{General input structure}{section.0.2}% 9
+\BOOKMARK [1][-]{section.0.3}{GENERAL CORE-DESCRIPTION MODULES }{}% 10
+\BOOKMARK [2][-]{subsection.0.3.1}{The RESINI: module}{section.0.3}% 11
+\BOOKMARK [3][-]{subsubsection.0.3.1.1}{Main input data to the RESINI: module}{subsection.0.3.1}% 12
+\BOOKMARK [3][-]{subsubsection.0.3.1.2}{Input of global and local parameters}{subsection.0.3.1}% 13
+\BOOKMARK [2][-]{subsection.0.3.2}{The USPLIT: module}{section.0.3}% 14
+\BOOKMARK [3][-]{subsubsection.0.3.2.1}{Input data to the USPLIT: module}{subsection.0.3.2}% 15
+\BOOKMARK [2][-]{subsection.0.3.3}{The MACINI: module}{section.0.3}% 16
+\BOOKMARK [2][-]{subsection.0.3.4}{The DEVINI: module}{section.0.3}% 17
+\BOOKMARK [3][-]{subsubsection.0.3.4.1}{Input data to the DEVINI: module}{subsection.0.3.4}% 18
+\BOOKMARK [3][-]{subsubsection.0.3.4.2}{Description of dev-rod input structure}{subsection.0.3.4}% 19
+\BOOKMARK [3][-]{subsubsection.0.3.4.3}{Description of rod-group input structure}{subsection.0.3.4}% 20
+\BOOKMARK [2][-]{subsection.0.3.5}{The DETINI: module}{section.0.3}% 21
+\BOOKMARK [3][-]{subsubsection.0.3.5.1}{Input data to the DETINI: module}{subsection.0.3.5}% 22
+\BOOKMARK [3][-]{subsubsection.0.3.5.2}{Description of the detector data}{subsection.0.3.5}% 23
+\BOOKMARK [2][-]{subsection.0.3.6}{The LZC: module}{section.0.3}% 24
+\BOOKMARK [3][-]{subsubsection.0.3.6.1}{Input data to the LZC: module}{subsection.0.3.6}% 25
+\BOOKMARK [3][-]{subsubsection.0.3.6.2}{Description of dev-lzc input structure}{subsection.0.3.6}% 26
+\BOOKMARK [3][-]{subsubsection.0.3.6.3}{Description of lzc-group input structure}{subsection.0.3.6}% 27
+\BOOKMARK [2][-]{subsection.0.3.7}{The DSET: module}{section.0.3}% 28
+\BOOKMARK [3][-]{subsubsection.0.3.7.1}{Input data to the DSET: module}{subsection.0.3.7}% 29
+\BOOKMARK [2][-]{subsection.0.3.8}{The MCC: module}{section.0.3}% 30
+\BOOKMARK [3][-]{subsubsection.0.3.8.1}{Main input data to the MCC: module}{subsection.0.3.8}% 31
+\BOOKMARK [2][-]{subsection.0.3.9}{The MOVDEV: module}{section.0.3}% 32
+\BOOKMARK [3][-]{subsubsection.0.3.9.1}{Input data to the MOVDEV: module}{subsection.0.3.9}% 33
+\BOOKMARK [2][-]{subsection.0.3.10}{The NEWMAC: module}{section.0.3}% 34
+\BOOKMARK [2][-]{subsection.0.3.11}{The FLPOW: module}{section.0.3}% 35
+\BOOKMARK [3][-]{subsubsection.0.3.11.1}{Input data to the FLPOW: module}{subsection.0.3.11}% 36
+\BOOKMARK [2][-]{subsection.0.3.12}{The TAVG: module}{section.0.3}% 37
+\BOOKMARK [3][-]{subsubsection.0.3.12.1}{Input data to the TAVG: module}{subsection.0.3.12}% 38
+\BOOKMARK [3][-]{subsubsection.0.3.12.2}{Time-average calculation using DONJON}{subsection.0.3.12}% 39
+\BOOKMARK [2][-]{subsection.0.3.13}{The TINST: module}{section.0.3}% 40
+\BOOKMARK [3][-]{subsubsection.0.3.13.1}{Input data to the TINST: module}{subsection.0.3.13}% 41
+\BOOKMARK [2][-]{subsection.0.3.14}{The SIM: module}{section.0.3}% 42
+\BOOKMARK [3][-]{subsubsection.0.3.14.1}{Input data to the SIM: module}{subsection.0.3.14}% 43
+\BOOKMARK [2][-]{subsection.0.3.15}{The XENON: module}{section.0.3}% 44
+\BOOKMARK [3][-]{subsubsection.0.3.15.1}{Input data to the XENON: module}{subsection.0.3.15}% 45
+\BOOKMARK [2][-]{subsection.0.3.16}{The DETECT: module}{section.0.3}% 46
+\BOOKMARK [3][-]{subsubsection.0.3.16.1}{Input data to the DETECT: module}{subsection.0.3.16}% 47
+\BOOKMARK [2][-]{subsection.0.3.17}{The CVR: module}{section.0.3}% 48
+\BOOKMARK [3][-]{subsubsection.0.3.17.1}{Input data to the CVR: module}{subsection.0.3.17}% 49
+\BOOKMARK [2][-]{subsection.0.3.18}{The HST: module}{section.0.3}% 50
+\BOOKMARK [3][-]{subsubsection.0.3.18.1}{Example}{subsection.0.3.18}% 51
+\BOOKMARK [1][-]{section.0.4}{CROSS-SECTION INTERPOLATION MODULES }{}% 52
+\BOOKMARK [2][-]{subsection.0.4.1}{The CRE: module}{section.0.4}% 53
+\BOOKMARK [3][-]{subsubsection.0.4.1.1}{Input data for the CRE: module}{subsection.0.4.1}% 54
+\BOOKMARK [2][-]{subsection.0.4.2}{The NCR: module}{section.0.4}% 55
+\BOOKMARK [3][-]{subsubsection.0.4.2.1}{Interpolation data input for module NCR:}{subsection.0.4.2}% 56
+\BOOKMARK [3][-]{subsubsection.0.4.2.2}{Defining local and global parameters}{subsection.0.4.2}% 57
+\BOOKMARK [3][-]{subsubsection.0.4.2.3}{Interpolation in the parameter grid}{subsection.0.4.2}% 58
+\BOOKMARK [2][-]{subsection.0.4.3}{The SCR: module}{section.0.4}% 59
+\BOOKMARK [3][-]{subsubsection.0.4.3.1}{Interpolation data input for module SCR:}{subsection.0.4.3}% 60
+\BOOKMARK [3][-]{subsubsection.0.4.3.2}{Defining global parameters}{subsection.0.4.3}% 61
+\BOOKMARK [3][-]{subsubsection.0.4.3.3}{Depletion data structure}{subsection.0.4.3}% 62
+\BOOKMARK [3][-]{subsubsection.0.4.3.4}{Interpolation in the parameter grid}{subsection.0.4.3}% 63
+\BOOKMARK [2][-]{subsection.0.4.4}{The AFM: module}{section.0.4}% 64
+\BOOKMARK [3][-]{subsubsection.0.4.4.1}{Input data to the AFM: module}{subsection.0.4.4}% 65
+\BOOKMARK [2][-]{subsection.0.4.5}{The T16CPO: module}{section.0.4}% 66
+\BOOKMARK [3][-]{subsubsection.0.4.5.1}{Input data for the T16CPO: module}{subsection.0.4.5}% 67
+\BOOKMARK [2][-]{subsection.0.4.6}{The D2P: module}{section.0.4}% 68
+\BOOKMARK [3][-]{subsubsection.0.4.6.1}{The PMAXS format}{subsection.0.4.6}% 69
+\BOOKMARK [3][-]{subsubsection.0.4.6.2}{General format of the module}{subsection.0.4.6}% 70
+\BOOKMARK [1][-]{section.0.5}{THERMAL-HYDRAULICS MODULES }{}% 71
+\BOOKMARK [2][-]{subsection.0.5.1}{The THM: module}{section.0.5}% 72
+\BOOKMARK [3][-]{subsubsection.0.5.1.1}{Input data to the THM: module}{subsection.0.5.1}% 73
+\BOOKMARK [1][-]{section.0.6}{OPTIMIZATION MODULES }{}% 74
+\BOOKMARK [2][-]{subsection.0.6.1}{The DLEAK: module}{section.0.6}% 75
+\BOOKMARK [3][-]{subsubsection.0.6.1.1}{Data input for module DLEAK:}{subsection.0.6.1}% 76
+\BOOKMARK [2][-]{subsection.0.6.2}{The GRAD: module}{section.0.6}% 77
+\BOOKMARK [3][-]{subsubsection.0.6.2.1}{Data input for module GRAD:}{subsection.0.6.2}% 78
+\BOOKMARK [2][-]{subsection.0.6.3}{The PLQ: module}{section.0.6}% 79
+\BOOKMARK [3][-]{subsubsection.0.6.3.1}{Data input for module PLQ:}{subsection.0.6.3}% 80
+\BOOKMARK [1][-]{section.0.7}{PIN-POWER RECONSTRUCTION MODULES }{}% 81
+\BOOKMARK [2][-]{subsection.0.7.1}{The NAP: module}{section.0.7}% 82
+\BOOKMARK [3][-]{subsubsection.0.7.1.1}{Additional properties calculations}{subsection.0.7.1}% 83
+\BOOKMARK [3][-]{subsubsection.0.7.1.2}{Pin power reconstruction}{subsection.0.7.1}% 84
+\BOOKMARK [3][-]{subsubsection.0.7.1.3}{Heterogeneous assembly geometry definition}{subsection.0.7.1}% 85
+\BOOKMARK [1][-]{section.0.8}{ DONJON DATA STRUCTURES }{}% 86
+\BOOKMARK [2][-]{subsection.0.8.1}{Contents of /fmap/ data structure}{section.0.8}% 87
+\BOOKMARK [3][-]{subsubsection.0.8.1.1}{The state-vector content}{subsection.0.8.1}% 88
+\BOOKMARK [3][-]{subsubsection.0.8.1.2}{The main /fmap/ directory}{subsection.0.8.1}% 89
+\BOOKMARK [3][-]{subsubsection.0.8.1.3}{The FUEL sub-directories}{subsection.0.8.1}% 90
+\BOOKMARK [3][-]{subsubsection.0.8.1.4}{The \173hcycle\175 sub-directories}{subsection.0.8.1}% 91
+\BOOKMARK [3][-]{subsubsection.0.8.1.5}{The PARAM sub-directories}{subsection.0.8.1}% 92
+\BOOKMARK [3][-]{subsubsection.0.8.1.6}{The ASSEMBLY sub-directory}{subsection.0.8.1}% 93
+\BOOKMARK [2][-]{subsection.0.8.2}{Contents of /matex/ data structure}{section.0.8}% 94
+\BOOKMARK [3][-]{subsubsection.0.8.2.1}{The state-vector content}{subsection.0.8.2}% 95
+\BOOKMARK [3][-]{subsubsection.0.8.2.2}{The /matex/ directory}{subsection.0.8.2}% 96
+\BOOKMARK [2][-]{subsection.0.8.3}{Contents of /device/ data structure}{section.0.8}% 97
+\BOOKMARK [3][-]{subsubsection.0.8.3.1}{The state-vector content}{subsection.0.8.3}% 98
+\BOOKMARK [3][-]{subsubsection.0.8.3.2}{The main /device/ directory}{subsection.0.8.3}% 99
+\BOOKMARK [3][-]{subsubsection.0.8.3.3}{The DEV-ROD sub-directories}{subsection.0.8.3}% 100
+\BOOKMARK [3][-]{subsubsection.0.8.3.4}{The ROD-GROUP sub-directories}{subsection.0.8.3}% 101
+\BOOKMARK [3][-]{subsubsection.0.8.3.5}{The DEV-LZC sub-directories}{subsection.0.8.3}% 102
+\BOOKMARK [3][-]{subsubsection.0.8.3.6}{The LZC-GROUP sub-directories}{subsection.0.8.3}% 103
+\BOOKMARK [2][-]{subsection.0.8.4}{Contents of a /detect/ data structure}{section.0.8}% 104
+\BOOKMARK [3][-]{subsubsection.0.8.4.1}{The state-vector content}{subsection.0.8.4}% 105
+\BOOKMARK [3][-]{subsubsection.0.8.4.2}{The main /detect/ directory}{subsection.0.8.4}% 106
+\BOOKMARK [3][-]{subsubsection.0.8.4.3}{The /name\137type/ sub-directories}{subsection.0.8.4}% 107
+\BOOKMARK [3][-]{subsubsection.0.8.4.4}{The /name\137detect/ sub-directories}{subsection.0.8.4}% 108
+\BOOKMARK [2][-]{subsection.0.8.5}{Contents of /power/ data structure}{section.0.8}% 109
+\BOOKMARK [3][-]{subsubsection.0.8.5.1}{The state-vector content}{subsection.0.8.5}% 110
+\BOOKMARK [3][-]{subsubsection.0.8.5.2}{The /power/ directory}{subsection.0.8.5}% 111
+\BOOKMARK [2][-]{subsection.0.8.6}{Contents of /history/ data structure}{section.0.8}% 112
+\BOOKMARK [3][-]{subsubsection.0.8.6.1}{The main directory}{subsection.0.8.6}% 113
+\BOOKMARK [3][-]{subsubsection.0.8.6.2}{The fuel type sub-directory}{subsection.0.8.6}% 114
+\BOOKMARK [3][-]{subsubsection.0.8.6.3}{The cell type sub-directory}{subsection.0.8.6}% 115
+\BOOKMARK [2][-]{subsection.0.8.7}{Contents of /thm/ data structure}{section.0.8}% 116
+\BOOKMARK [3][-]{subsubsection.0.8.7.1}{The main /thm/ directory}{subsection.0.8.7}% 117
+\BOOKMARK [3][-]{subsubsection.0.8.7.2}{The HISTORY-DATA sub-directory}{subsection.0.8.7}% 118
+\BOOKMARK [2][-]{subsection.0.8.8}{Contents of a /optimize/ data structure}{section.0.8}% 119
+\BOOKMARK [3][-]{subsubsection.0.8.8.1}{The sub-directory /OLD-VALUE/ in /optimize/}{subsection.0.8.8}% 120
+\BOOKMARK [2][-]{subsection.0.8.9}{Contents of /d2p\137info/ data structure}{section.0.8}% 121
+\BOOKMARK [3][-]{subsubsection.0.8.9.1}{The state-vector content}{subsection.0.8.9}% 122
+\BOOKMARK [1][-]{section.0.9}{EXAMPLES }{}% 123

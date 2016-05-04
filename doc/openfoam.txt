@@ -1,0 +1,233 @@
+ 
+OpenFOAM®  Installation From Source
+
+Preliminaries  System Requirements =================================================
+
+    Make sure that your system complies with the system requirements
+    The Source contains all the source code needed for compilation on a Linux system
+    Installation was tested on Ubuntu 15.10, Ubuntu 14.04.3 LTS, CentOS and OpenSUSE Tumbleweed
+    Installation is possible on most other POSIX system with some minor additional settings
+    
+Minimum recommended versions
+
+    gcc: 4.5.0
+    cmake: 2.8.11 (required for ParaView and CGAL build)
+    boost: 1.48 (required for CGAL build)
+    Qt: 4.7.2 (optional - required for ParaView build)
+
+---- Ubuntu)  System requirements for Ubuntu OS --------------------------------------------------------
+
+Install the dependencies by copying and pasting the following lines to the command line:
+
+sudo apt-get install build-essential flex bison cmake zlib1g-dev libboost-system-dev libboost-thread-dev libopenmpi-dev openmpi-bin gnuplot libreadline-dev libncurses-dev libxt-dev
+sudo apt-get install qt4-dev-tools libqt4-dev libqt4-opengl-dev freeglut3-dev libqtwebkit-dev
+Paralelisation OpenMPI library together with Scotch and GCAL libraries can be compiled from the ThirdParty directory or the system versions can be installed:
+
+sudo apt-get install libscotch-dev libcgal-dev
+
+    To check version of MPI library installed, run: mpirun --version (for Ubuntu 15.10 it will be version 1.6.5)
+    To check compiler version installed, run: gcc --version (for Ubuntu 15.10 the system version will be 5.2.1)
+    System version of cmake is 3.2.2 for Ubuntu 15.10 (cmake --version)
+    System version of CGAL library is 4.6.1 for Ubuntu 15.10 (sudo apt-cache show libcgal-dev)
+    System version of scotch library is 5.1.12b for Ubuntu 15.10 (sudo apt-cache show libscotch-dev)
+    The GCC compiler is used as the default, with additional support for Intel ICC (from version 15.0.3) and LLVM Clang (from version 3.4)
+
+--- OpenSUSE)   System requirements for OpenSUSE Tumbleweed OS ----------------------------------------------
+
+Install the dependencies by copying and pasting the following lines to the command line:
+
+default:
+sudo zypper install -t pattern devel_C_C++
+sudo zypper install cmake boost-devel gnuplot mpfr-devel openmpi-devel glu-devel
+sudo zypper install libQtWebKit-devel libqt4-devel qt4-assistant-adp-devel qt4-x11-tools
+
+with my mpi:
+sudo zypper install -t pattern devel_C_C++
+sudo zypper install cmake boost-devel gnuplot mpfr-devel  glu-devel
+sudo zypper install libQtWebKit-devel libqt4-devel qt4-assistant-adp-devel qt4-x11-tools
+
+This installs
+
+    MPI library: openmpi 1.8.8
+    gcc:5.2.1
+    cmake: 3.3.2
+    CGAL: 4.7-1.2
+
+Remark 1.  MPI *******************************************************
+Check that the openmpi installation can be found, e.g.
+
+mpicc --show
+This should display a complete compilation line. Above command is used in OpenFOAM+ to obtain the compilation and link options. If the command can not be found it the paths can e.g. be added to the user’s $HOME/.bashrc:
+
+export PATH=$PATH:/usr/lib64/mpi/gcc/openmpi/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/mpi/gcc/openmpi/lib
+    
+Ex mysystem
+export PATH=$PATH:/dsk5/dsk5/software/openmpi/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/dsk5/dsk5/software/openmpi/
+
+************************************************************************    
+    
+
+Build the code from source ===========================================================
+
+    Download OpenFOAM-v3.0+.tgz (md5sum: 7bfdf5a2037b2991ecd9625a7d0da68d)
+    Download ThirdParty-v3.0+.tgz (md5sum: cca5695b58109fb8ed35e41ad22dbe88)
+    Unpack the tarballs to create the directories OpenFOAM-v3.0+ and ThirdParty-v3.0+
+    
+    
+    mkdir /dsk5/dsk5/software/OpenFOAM && tar -xzf OpenFOAM-v3.0+.tgz -C /dsk5/dsk5/software//OpenFOAM && tar -xzf ThirdParty-v3.0+.tgz -C /dsk5/dsk5/software/OpenFOAM
+
+    tar -xzf OpenFOAM-v3.0+.tgz
+    tar -xzf ThirdParty-v3.0+.tgz
+    
+    OpenFOAM can be installed either to:
+        the user home directory, e.g. $HOME/OpenFOAM, or
+        to a system wide directory, e.g. /opt/OpenFOAM.
+    The default is the home directory, for a different location adapt the foamInstall in the set up file etc/bashrc.
+    If unsure, the following line will extract files to the $HOME/OpenFOAM directory:
+
+    mkdir $HOME/OpenFOAM && tar -xzf OpenFOAM-v3.0+.tgz -C $HOME/OpenFOAM && tar -xzf ThirdParty-v3.0+.tgz -C $HOME/OpenFOAM
+    here
+    mkdir /dsk5/dsk5/software/OpenFOAM && tar -xzf OpenFOAM-v3.0+.tgz -C /dsk5/dsk5/software//OpenFOAM && tar -xzf ThirdParty-v3.0+.tgz -C /dsk5/dsk5/software/OpenFOAM
+    
+    Source the OpenFOAM environment by executing, e.g. for bash shells:
+
+    source ~/OpenFOAM/OpenFOAM-v3.0+/etc/bashrc
+    To build refer to the build guide
+    
+    OpenFOAM®  Build Guide ====================================================================
+
+In the following sections, text in boxes should be entered into your shell window.
+
+Ensure that the system requirements are satisfied as described here, 
+and make sure to source the correct OpenFOAM environment e.g. for version OpenFOAM-v3.0+
+
+
+A. Setting the environment -----------------------------------------------------------------------
+
+setting the environment to different directory. For example to /dsk5/dsk5/software/OpenFOAM. 
+1) The commands are 
+
+default directory:
+nothing to do for installation directory in  $HOME/OpenFOAM
+
+user directory:
+export FOAM_INST_DIR=/data/app/OpenFOAM
+foamDotFile=$FOAM_INST_DIR/OpenFOAM-3.0.1/etc/bashrc
+[ -f $foamDotFile ] && . $foamDotFile
+
+
+2) source the environment
+
+default directory:
+source ~/OpenFOAM/OpenFOAM-v3.0+/etc/bashrc
+
+user directory:
+source /dsk5/dsk5/software/OpenFOAM/OpenFOAM-v3.0+/etc/bashrc
+
+Remark 1 Preliminaries **************************************************
+
+OpenFOAM is shipped with ParaView for post-processing OpenFOAM field results. This requires a separate compilation which can be omitted if using other post-processing software. To compile ParaView:
+
+cd $WM_THIRD_PARTY_DIR
+./makeParaView4
+
+****************************************************************
+
+
+
+B. Compile OpenFOAM ------------------------------------------------------------------------------
+
+The compilation process is self-contained and will compile and install all OpenFOAM code and dependencies.
+
+   1)  Test the system readiness with the command
+    foamSystemCheck
+    
+   2)  Change to the main OpenFOAM directory ($WM_PROJECT_DIR). If this fails, the environment is not configured correctlywith the command 
+    foam
+    
+   3)  Compile OpenFOAMwith the command 
+    ./Allwmake
+    
+    
+    In case you need to stop the compilation, continue later by running Allwmake again
+
+Remark 1: Compile OpenFOAM faster ****************************
+
+For faster compilation, users can take advantage of multi-processor machines to build the code in parallel by setting the environment variable WM_NCOMPPROCS, e.g.
+
+export WM_NCOMPPROCS=10
+In addition, multiple machines can be used by setting:
+
+export WM_SCHEDULER=wmakeScheduler
+export WM_HOSTS="box1:4 box2:8"
+export WM_NCOMPPROCS$($WM_SCHEDULER -count))
+Where:
+
+    WM_SCHEDULER - flag to use the scheduler
+    WM_HOSTS - names of hosts and number of their CPUs to use
+    WM_NCOMPPROCS - number of parallel processes
+    
+    
+Remark 2 wmake **************************************************
+
+OpenFOAM uses wmake to perform compilation (building, linking) of its C++ source code into executable code. wmake is called from the Allwmake scripts during the initial build of the complete OpenFOAM project but can be executed directly to update the compilation of any of the OpenFOAM components:
+
+    all invocations can have an optional directory:
+
+    wmake $FOAM_UTILITIES/mesh/manipulation/checkMesh
+    wmake libso $FOAM_SRC/finiteVolume
+    recursively build all applications in current or specified directory:
+
+    wmake all
+    wmake all <dir>
+    build any single object or executable:
+
+    wmake Make/linux64Gcc4DPOpt/<object>.o
+    wmake <executable>
+    build any single shared library:
+
+    wmake libso
+    wmake libso <lib dir>    
+    
+    
+****************************************************    
+
+
+C. Post-compilation steps
+
+    Open a new shell and source the OpenFOAM environment to see all changes (refer to top of page)
+    
+    Validate the build by running
+    foamInstallationTest
+    
+    Create the user run directory:
+    mkdir -p $FOAM_RUN
+    
+    Test the installation with a simple tutorial:
+    run
+    cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily ./
+    cd pitzDaily
+    blockMesh
+    simpleFoam
+    paraFoam 
+    
+  Remark 1  test2 ******************************************
+  Run the first example case of incompressible laminar flow in a cavity: 
+    
+  Create a project directory within the $HOME/OpenFOAM directory named
+  <USER>-3.0.1 (e.g. chris-3.0.1 for user chris and OpenFOAM version 3.0.1)
+  and create a directory named run within it, e.g. by typing: 
+  
+  mkdir -p $FOAM_RUN
+ 
+  Copy the tutorial examples directory in the OpenFOAM distribution to the run directory. If the OpenFOAM environment variables are set correctly, then the following command will be correct:
+ cp -r $FOAM_TUTORIALS $FOAM_RUN
+ cd $FOAM_RUN/tutorials/incompressible/icoFoam/cavity
+ blockMesh
+ icoFoam
+ paraFoam
+    
+    
+    

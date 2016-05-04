@@ -1,0 +1,62 @@
+\subsection{The \texttt{PLQ:} module}
+
+The {\tt PLQ:} module is used to solve the linear programming problem with a quadratic constraint. The gradients of the {\sl system
+characteristics} are calculated with module {\tt GRAD:}. The options and parameters for the different method to solve the optimization problem
+are also defined in module {\tt GRAD:}.
+
+\vskip 0.08cm
+
+The calling specifications are:
+
+\begin{DataStructure}{Structure \moc{PLQ:}}
+\dusa{OPTIM} \moc{:=} \moc{PLQ:} $[$ \dusa{OPTIM} $]$ \moc{::} \dstr{plq\_data}
+\end{DataStructure}
+
+\noindent where
+
+\begin{ListeDeDescription}{mmmmmmmm}
+
+\item[\dusa{OPTIM}] \texttt{character*12} name of the \dds{optimize} object ({\tt L\_OPTIMIZE} signature) containing the
+optimization informations. Object \dusa{OPTIM} must appear on the RHS to be able to updated the previous values.
+
+\item[\dstr{plq\_data}] structure containing the data to the module \texttt{PLQ:} (see Sect.~\ref{sect:plq_data}).
+
+\end{ListeDeDescription}
+\vskip 0.2cm
+
+\subsubsection{Data input for module \texttt{PLQ:}}\label{sect:plq_data}
+
+\begin{DataStructure}{Structure \moc{plq\_data}}
+$[$ \moc{EDIT} \dusa{iprint} $]$ \\
+$[$ \moc{WARNING-ONLY} $]$ \\
+\moc{CALCUL-DX} $[$ \moc{NO-STORE-OLD} $]$ \\
+$[$ \moc{COST-EXTRAP} {\tt >>} \dusa{ecost} {\tt <<} $]$ \\
+$[$ \moc{CONV-TEST} {\tt >>} \dusa{$l_{conv}$} {\tt <<} $]$ \\
+;
+\end{DataStructure}
+
+\noindent where
+\begin{ListeDeDescription}{mmmmmmmm}
+
+\item[\moc{EDIT}] keyword used to set \dusa{iprint}.
+
+\item[\dusa{iprint}] index used to control the printing in module.
+
+\item[\moc{WARNING-ONLY}] keyword used to specify that only a warning will be used when no valid previous decision vectors can
+be recall in case of error of the mathematical programming.
+
+\item[\moc{CALCUL-DX}] keyword used to specify that the new step will be calculated.
+
+\item[\moc{NO-STORE-OLD}] keyword used to specify that the old value of decision variables and gradients will not be stored in
+the {\tt L\_OPTIMIZE/'OLD-VALUE'} directory.
+
+\item[\moc{COST-EXTRAP}] keyword used to calculate the extrapolated objective constant \dusa{ecost}.
+
+\item[\dusa{ecost}] extrapolated objective constant.
+
+\item[\moc{CONV-TEST}] keyword used to calculate if the external convergence has been reached.
+
+\item[\dusa{$l_{conv}$}] $=1$ means that external convergence has been reached; $=0$ otherwise.
+
+\end{ListeDeDescription}
+\clearpage
